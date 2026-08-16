@@ -7,6 +7,7 @@ return {
         opts.settings = {
           java = {
             configuration = {
+              --[[
               runtimes = {
                 {
                   name = "Java 17",
@@ -22,14 +23,15 @@ return {
                   default = true,
                 },
               },
+              ]]
             },
           },
         }
 
-        -- JDK used to RUN jdtls
-        opts.cmd_env = {
-          JAVA_HOME = vim.fn.expand("~/.sdkman/candidates/java/21"),
-        }
+        local jdtls_java = vim.env.JDTLS_JAVA
+        if jdtls_java ~= nil and jdtls_java ~= "" then
+          opts.cmd = { "jdtls", "--java-executable", jdtls_java }
+        end
 
         return opts
       end,
