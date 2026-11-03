@@ -48,6 +48,7 @@ local ruff = {
     },
   },
 }
+local basedpyright = {}
 local pylsp = {
   cmd = { "pylsp" },
   filetypes = { "python" },
@@ -67,6 +68,7 @@ local pylsp = {
     },
   },
 }
+local ty = {}
 
 -- JavaScript/TypeScript
 local tailwindcss = {}
@@ -99,8 +101,10 @@ if true then
           neocmake = neocmake,
           clangd = clangd,
           ruff = ruff,
-          pylsp = pylsp,
-          -- pyright = disabled,
+          -- basedpyright = basedpyright,
+          pylsp = disabled,
+          pyright = disabled,
+          ty = ty,
           tailwindcss = tailwindcss,
           -- vtsls = disabled,
           tsgo = tsgo,

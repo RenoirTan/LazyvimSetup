@@ -1,3 +1,4 @@
+--[[
 return {
   {
     "iamcco/markdown-preview.nvim",
@@ -8,4 +9,4 @@ return {
       vim.g.mkdp_filetypes = { "markdown" }
     end,
   },
-}
+}]]
